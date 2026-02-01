@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DatabaseSchema": {
+      "commandName": "Project",
+      "commandLineArgs": "get-employee --employeeId 1"
+    }
+  }
+}
