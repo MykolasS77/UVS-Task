@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Models
+namespace Models.DTOs
 {
-    public class Employee
+    public class SetEmployeeDTO
     {
-        [Key]
+        [Required]
         public int Id { get; set; }
         [Required(ErrorMessage = "{0} not provided")]
         [MaxLength(128)]

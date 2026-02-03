@@ -1,5 +1,5 @@
 <Solution>
   <Project Path="DatabaseSchema/DatabaseSchema.csproj" />
-  <Project Path="Interfaces/Services.csproj" Id="85509299-1ba3-4e31-ae41-211969fa08e3" />
   <Project Path="Models/Models.csproj" Id="f924da2a-e025-4c04-843d-dc22ac1d94e7" />
+  <Project Path="Services/Services.csproj" />
 </Solution>

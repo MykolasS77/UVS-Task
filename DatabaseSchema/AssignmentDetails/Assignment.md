@@ -8,7 +8,7 @@ For more information
  * https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping
  * https://learn.microsoft.com/en-us/ef/
 
-The app should be built in .NET 6.0
+The app should be built in .NET 6.0 
 
 e.g.
 
@@ -23,7 +23,7 @@ If you are facing any difficulties with this task, feel free to finish task as b
 
 There are tools included to set up and tear down a postgres database using docker:
 
- * Setup database: ./setUpDatabase.ps1
+ * Setup docker: ./setUpDatabase.ps1 (moved to DatabaseSchema/AssignmentDetails/setUpDocker.ps1)
  * Database schema: ./DatabaseSchema/dbSchema.sql
 
 If you choose to use a different database, that is fine, just include details in your submission.

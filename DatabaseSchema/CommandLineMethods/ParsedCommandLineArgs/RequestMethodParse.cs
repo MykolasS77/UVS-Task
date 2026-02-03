@@ -1,11 +1,12 @@
 ﻿using Models;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DatabaseSchema.CommandLineMethods
+namespace DatabaseSchema.CommandLineMethods.ParsedCommandLineArgs
 {
-    public class RequestMethodParse
+    public class RequestMethodParse: IRequestMethodParse
     {
         private readonly RequestMethod RequestMethodType;
 
@@ -24,7 +25,7 @@ namespace DatabaseSchema.CommandLineMethods
 
         }
 
-        public RequestMethod GetRequestMethod()
+        public RequestMethod GetParsedRequestMethod()
         {
             return RequestMethodType;
         }
