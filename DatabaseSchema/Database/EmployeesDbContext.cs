@@ -5,10 +5,9 @@ using System;
 
 namespace DatabaseSchema.Database
 {
-    public class EmployeesDbContext: DbContext
+    public class EmployeesDbContext : DbContext
     {
         public DbSet<Employee> Employees { get; set; }
-
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
@@ -20,6 +19,6 @@ namespace DatabaseSchema.Database
 
             options.UseNpgsql(connectionString);
         }
-    
+
     }
 }

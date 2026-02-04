@@ -2,12 +2,13 @@
   "profiles": {
     "DatabaseSchema": {
       "commandName": "Project",
-      "commandLineArgs": "get-employee --employeeId 1",
+      "commandLineArgs": "",
       "environmentVariables": {
         "SERVER": "localhost",
         "USER_ID": "postgres",
         "PASSWORD": "guest",
         "PORT": "7777"
+
       }
     }
   }

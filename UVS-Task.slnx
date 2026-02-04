@@ -2,4 +2,5 @@
   <Project Path="DatabaseSchema/DatabaseSchema.csproj" />
   <Project Path="Models/Models.csproj" Id="f924da2a-e025-4c04-843d-dc22ac1d94e7" />
   <Project Path="Services/Services.csproj" />
+  <Project Path="Tests/Tests.csproj" Id="b3cf390c-de55-4b90-af87-2e1e7f6f6a17" />
 </Solution>

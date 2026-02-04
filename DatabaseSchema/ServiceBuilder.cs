@@ -1,7 +1,11 @@
-﻿using DatabaseSchema.CommandLineMethods.ArgsProcessing;
-using DatabaseSchema.CommandLineMethods.ParsedCommandLineArgs;
+﻿using DatabaseSchema.CommandLineMethods.ParsedCommandLineArgs;
+using DatabaseSchema.CommandLineProcessing;
+using DatabaseSchema.CommandLineProcessing.ArgsValidation;
+using DatabaseSchema.CommandLineProcessing.ParsedCommandLineArgs;
 using DatabaseSchema.Database;
 using DatabaseSchema.Database.BusinessLogic;
+using DatabaseSchema.Database.DTOMakers;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Services;
 
@@ -9,45 +13,21 @@ namespace DatabaseSchema
 {
     public class ServiceBuilder
     {
-        public IRequestMethodParse BuildServiceForRequestParce()
+
+        public ServiceProvider BuildServiceForProgram()
         {
-            ServiceProvider requestMethodServiceProvider = new ServiceCollection()
-                    .AddSingleton<IRequestMethodParse, RequestMethodParse>()
-                    .BuildServiceProvider();
-
-            IRequestMethodParse requestService = requestMethodServiceProvider.GetRequiredService<IRequestMethodParse>();
-
-            return requestService;
-        }
-
-        public IDatabaseGetService BuildServiceForGetMethod()
-        {
-            ServiceProvider getServiceProvider = new ServiceCollection()
-                    .AddDbContext<EmployeesDbContext>()
-                    .AddSingleton<ICommandLineArgumentsService, ParsedArgs>()
-                    .AddSingleton<IGetEmployeeArgsProcessingService, ArgsProcessingForGetEmployee>()
-                    .AddSingleton<IDatabaseGetService, GetEmployee>()
-                    .BuildServiceProvider();
-
-            IDatabaseGetService getService = getServiceProvider.GetRequiredService<IDatabaseGetService>();
-
-            return getService;
-        }
-
-        public IDatabaseSetService BuildServiceForSetMethod()
-        {
-
             ServiceProvider setServiceProvider = new ServiceCollection()
                     .AddDbContext<EmployeesDbContext>()
-                    .AddSingleton<ICommandLineArgumentsService, ParsedArgs>()
-                    .AddSingleton<ISetEmployeeArgsProcessingService, ArgsProcessingForSetEmployee>()
-                    .AddSingleton<IDatabaseSetService, SetEmployee>()
+                    .AddSingleton<ICommandLineArgsGetter, CommandLineArgsGetter>()
+                    .AddSingleton<IArgsValidation, CommandLineArgsValidation>()
+                    .AddSingleton<IFormatArgsForRequest, ArgsFormattingForRequest>()
+                    .AddSingleton<IDTOMaker, DTOMaker>()
+                    .AddSingleton<IDatabaseLogicService, DatabaseLogic>()
+                    .AddSingleton<IRequestMethodParse, RequestMethodParse>()
+                    .AddSingleton<IMethodInit, MethodInit>()
                     .BuildServiceProvider();
 
-            IDatabaseSetService setSerivce = setServiceProvider.GetRequiredService<IDatabaseSetService>();
-
-            return setSerivce;
-
+            return setServiceProvider;
         }
     }
 }

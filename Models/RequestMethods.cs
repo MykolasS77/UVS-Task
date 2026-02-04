@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Models
+﻿namespace Models
 {
 
     public enum RequestMethod
@@ -10,5 +6,5 @@ namespace Models
         Get,
         Set,
     }
-    
+
 }
