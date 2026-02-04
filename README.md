@@ -23,6 +23,8 @@ C#
 * Right click on 'DatabaseSchema\AssignmentDetails' directory and open in terminal. 
 * Run '.\setUpDocker.ps1' command.
 * Open Docker Desktop, click on "Containers" and make sure the 'employee-database-container' is running.
+<img width="950" height="562" alt="image" src="https://github.com/user-attachments/assets/08668887-0c23-44f8-b685-ec771362be33" />
+
 
 ## To Run
 
