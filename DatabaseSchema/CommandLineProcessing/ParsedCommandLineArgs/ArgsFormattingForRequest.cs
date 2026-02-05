@@ -33,16 +33,16 @@ namespace DatabaseSchema.CommandLineMethods.ParsedCommandLineArgs
         {
 
 
-            Dictionary<string, string> parsedMethodArguments = new Dictionary<string, string>();
+            Dictionary<string, string> parsedKeyAndValueArgs = new Dictionary<string, string>();
 
             for (int i = 0; i < validatedArgs.Length; i += 2)
             {
                 string? validKey = _commandLineArgsNameConvert[validatedArgs[i]];
                 string? validValue = validatedArgs[i + 1];
-                parsedMethodArguments.Add(validKey, validValue);
+                parsedKeyAndValueArgs.Add(validKey, validValue);
             }
 
-            return parsedMethodArguments;
+            return parsedKeyAndValueArgs;
         }
 
     }
